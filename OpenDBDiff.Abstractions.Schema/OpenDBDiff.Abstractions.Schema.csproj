@@ -6,6 +6,10 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Lofcz.Forks.OpenDBDiff.Abstractions.Schema</PackageId>
+    <Authors>OpenDBDiff Contributors, Matěj "lofcz" Štágl</Authors>
+    <Description>Fork of https://github.com/OpenDBDiff/OpenDBDiff</Description>
   </PropertyGroup>
 
   <ItemGroup>

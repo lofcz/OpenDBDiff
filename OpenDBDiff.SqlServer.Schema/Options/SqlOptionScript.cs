@@ -4,28 +4,28 @@ using System.Collections.Generic;
 
 namespace OpenDBDiff.SqlServer.Schema.Options
 {
-    public class SqlOptionScript : IOptionsContainer<bool>
+    public class SqlOptionScript : IOptionsContainer<object>
     {
-        private Boolean alterObjectOnSchemaBinding = true;
-
         public SqlOptionScript()
         {
         }
 
-        public SqlOptionScript(IOptionsContainer<bool> optionsContainer)
+        public bool AlterObjectOnSchemaBinding { get; set; } = true;
+        public string DiffHeader { get; set; }
+
+        public SqlOptionScript(IOptionsContainer<object> optionsContainer)
         {
-            AlterObjectOnSchemaBinding = optionsContainer.GetOptions()["AlterObjectOnSchemaBinding"];
+            AlterObjectOnSchemaBinding = (bool)optionsContainer.GetOptions()["AlterObjectOnSchemaBinding"];
+            DiffHeader = (string)optionsContainer.GetOptions()["DiffHeader"];
         }
 
-        public Boolean AlterObjectOnSchemaBinding
+        public IDictionary<string, object> GetOptions()
         {
-            get { return alterObjectOnSchemaBinding; }
-            set { alterObjectOnSchemaBinding = value; }
-        }
-
-        public IDictionary<string, bool> GetOptions()
-        {
-            return new Dictionary<string, bool>() { { "AlterObjectOnSchemaBinding", AlterObjectOnSchemaBinding } };
+            return new Dictionary<string, object>
+            {
+                { "AlterObjectOnSchemaBinding", AlterObjectOnSchemaBinding },
+                { "DiffHeader", DiffHeader },
+            };
         }
     }
 }

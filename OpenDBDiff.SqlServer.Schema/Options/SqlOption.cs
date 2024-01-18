@@ -54,7 +54,7 @@ namespace OpenDBDiff.SqlServer.Schema.Options
         IOptionsContainer<string> IOption.Defaults { get { return Defaults; } }
         IOptionsContainer<bool> IOption.Ignore { get { return Ignore; } }
 
-        IOptionsContainer<bool> IOption.Script { get { return Script; } }
+        IOptionsContainer<object> IOption.Script { get { return Script; } }
 
         IOptionComparison IOption.Comparison { get { return Comparison; } }
 

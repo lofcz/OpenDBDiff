@@ -5,7 +5,7 @@
         IOptionFilter Filters { get; }
         IOptionsContainer<string> Defaults { get; }
         IOptionsContainer<bool> Ignore { get; }
-        IOptionsContainer<bool> Script { get; }
+        IOptionsContainer<object> Script { get; }
         IOptionComparison Comparison { get; }
 
         string Serialize();

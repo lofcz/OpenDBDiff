@@ -6,14 +6,19 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageId>Lofcz.Forks.OpenDBDiff.SqlServer.Schema</PackageId>
+    <Version>1.0.2</Version>
+    <Authors>OpenDBDiff.SqlServer.Schema Contributors, Matěj "lofcz" Štágl</Authors>
+    <Description>A fork of https://github.com/OpenDBDiff/OpenDBDiff</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Lofcz.Forks.OpenDBDiff.Abstractions.Schema" Version="1.0.0" />
+    <PackageReference Include="TSQL.Parser" Version="2.6.0" />
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
-    <PackageReference Include="TSQL.Parser" Version="1.5.2" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.4" />
     <Compile Include="..\OpenDBDiff\Properties\AssemblyVersionInfo.cs" Link="Properties\AssemblyVersionInfo.cs" />
-    <ProjectReference Include="..\OpenDBDiff.Abstractions.Schema\OpenDBDiff.Abstractions.Schema.csproj" />
   </ItemGroup>
 
   <ItemGroup>

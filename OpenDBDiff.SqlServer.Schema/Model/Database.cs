@@ -203,7 +203,7 @@ namespace OpenDBDiff.SqlServer.Schema.Model
 
             var listDiff = new SQLScriptList();
 
-            var header = $@"/*
+            var header = Options.Script.DiffHeader ?? $@"/*
 
     OpenDBDiff {System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()}
     https://github.com/OpenDBDiff/OpenDBDiff
